@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <h2>ログイン</h2>
+    <div class="col-12">
+      <%= form_with model: @customer, url: session_path(resource_name) do |f| %>
+        <table class="table">
+          <tr>
+            <th><%= f.label :メールアドレス %></th>
+            <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :パスワード %></th>
+            <td><%= f.password_field :password, autocomplete: "current-password" %></td>
+          </tr>
+        </table>
+        <div class="actions">
+          <%= f.submit "ログイン" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+<%= render "public/shared/links" %>

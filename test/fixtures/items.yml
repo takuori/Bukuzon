@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  genre_id: 1
+  name: MyString
+  item_detail: MyText
+  price_without_tax: 1
+  is_sale_status: false
+
+two:
+  genre_id: 1
+  name: MyString
+  item_detail: MyText
+  price_without_tax: 1
+  is_sale_status: false
