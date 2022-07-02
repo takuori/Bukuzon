@@ -1,2 +1,18 @@
-<h1>Public::Items#show</h1>
-<p>Find me in app/views/public/items/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2>商品詳細</h2>
+      <%= image_tag @item.item_image, width:"100%", height:"409px" %>
+      <%= form_with model: @cart_item, url: cart_items_path(item_id: @item), method: :post do |f| %>
+        <%= @item.name %>
+        <%= @item.item_detail %>
+        <%= @item.with_tax_price.to_s(:delimited) %>(税込)
+        <%= f.hidden_field :item_id, :value => @item.id %>
+        カートに入れる数量: <%= f.select :quantity, [['1個', 1], ['2個', 2], ['3個', 3], ['4個', 4], ['5個',5], ['6個', 6], ['7個', 7], ['8個', 8], ['9個', 9]], {:prompt => "個数選択"} %>
+        <% if @item.is_sale_status %>
+          <%= f.submit "カートに入れる" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
