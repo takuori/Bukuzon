@@ -1,26 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <div class="navbar-brand" style="padding-bottom: 15px;">
-      <h2>Bukuzon</h2>
+    <div class="navbar-brand">
+      <h2 class="h2">Bukuzon</h2>
     </div>
     <div>
       <ul class="navbar-nav ml-auto", style="font-family: Hannotate SC;">
         <% if customer_signed_in? %>
-          <li><%= link_to "マイページ", customers_mypage_path %></li>
-          <li><%= link_to "商品一覧", items_path %></li>
-          <li><%= link_to "カート", cart_items_path %></li>
-          <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
+          <li><%= link_to "マイページ", customers_mypage_path, class: 'btn btn-outline-light ms-3' %></li>
+          <li><%= link_to "商品一覧", items_path, class: 'btn btn-outline-light ms-3' %></li>
+          <li><%= link_to "カート", cart_items_path, class: 'btn btn-outline-light ms-3' %></li>
+          <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'btn btn-outline-light ms-3' %></li>
         <% elsif admin_signed_in? %>
-          <li><%= link_to "商品一覧", admin_items_path %></li>
-          <li><%= link_to "会員一覧", admin_customers_path %></li>
-          <li><%= link_to "注文履歴一覧", admin_root_path %></li>
-          <li><%= link_to "ジャンル一覧", admin_genres_path %></li>
-          <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+          <li><%= link_to "商品一覧", admin_items_path, class: 'btn btn-outline-light ms-3' %></li>
+          <li><%= link_to "会員一覧", admin_customers_path, class: 'btn btn-outline-light ms-3' %></li>
+          <li><%= link_to "注文履歴一覧", admin_root_path, class: 'btn btn-outline-light ms-3' %></li>
+          <li><%= link_to "ジャンル一覧", admin_genres_path, class: 'btn btn-outline-light ms-3' %></li>
+          <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'btn btn-outline-light ms-3' %></li>
         <% else %>
-          <li><%= link_to "アバウト", about_path %></li>
-          <li><%= link_to "商品一覧", items_path %></li>
-          <li><%= link_to "新規登録", new_customer_registration_path %></li>
-          <li><%= link_to "ログイン", new_customer_session_path %></li>
+          <li><%= link_to "アバウト", about_path, class: 'btn btn-outline-light ms-3' %></li>
+          <li><%= link_to "商品一覧", items_path, class: 'btn btn-outline-light ms-3' %></li>
+          <li><%= link_to "新規登録", new_customer_registration_path, class: 'btn btn-outline-light ms-3' %></li>
+          <li><%= link_to "ログイン", new_customer_session_path, class: 'btn btn-outline-light ms-3' %></li>
         <% end %>
       </ul>
     </div>
