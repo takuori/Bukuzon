@@ -15,9 +15,7 @@
     <header class="headline  navbar-dark bg-secondary">
       <% if customer_signed_in? %>
         <%= render 'layouts/header' %>
-      <% elsif admin_signed_in? %>
-        <%= render 'layouts/header' %>
-      <% else %>
+      <% else admin_signed_in? %>
         <%= render 'layouts/header' %>
       <% end %>
     </header>
